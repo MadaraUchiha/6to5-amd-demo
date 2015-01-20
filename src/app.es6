@@ -17,6 +17,6 @@ import answer from 'myDependencies/newFormat';
 
 console.log(question, answer);
 
-let p = document.createElement('p');
-p.innerHTML = `Question: <strong>${question}</strong> and the answer is <strong>${answer}</strong>`;
-document.querySelector('.container').appendChild(p);
+let h1 = document.createElement('h1');
+h1.innerHTML = `Question: <strong>${question}</strong> and the answer is <strong>${answer}</strong>`;
+document.querySelector('.container').appendChild(h1);
