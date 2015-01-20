@@ -1,4 +1,11 @@
-import Promise from '../../bower_components/bluebird/js/browser/bluebird'
-let answer = 42;
+/**
+ * This is the new module format.
+ * Using export default to export a single value out of the module.
+ *
+ * It's also possible to export multiple values using this syntax.
+ */
 
-export default answer;
+// Using some ES6 syntax here
+let answer = () => 42;
+
+export default answer();
