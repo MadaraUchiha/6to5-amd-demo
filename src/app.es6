@@ -13,10 +13,28 @@ import question from 'myDependencies/oldFormat';
 // The module has a .es6 extension, just like this file. It will be converted to an AMD module by 6to5.
 import answer from 'myDependencies/newFormat';
 
+// Multiple imports! Sometimes you need more than one value from a module,
+// in that case, multiple exports for the rescue!
+import {Storage, Magic} from 'myDependencies/classes';
+
 // This file doesn't care where the modules come from, and it can import both the same way.
+
+let storage = new Storage();
+let magic = new Magic();
+
+storage.store.unicorns = magic.areUnicornsReal;
+
+storage.saveStore();
 
 console.log(question, answer);
 
 let h1 = document.createElement('h1');
 h1.innerHTML = `Question: <strong>${question}</strong> and the answer is <strong>${answer}</strong>`;
-document.querySelector('.container').appendChild(h1);
+
+let p = document.createElement('p');
+p.innerHTML = `Are unicorns real? ${storage.store.unicorns}`;
+
+let container = document.querySelector('.container');
+
+container.appendChild(h1);
+container.appendChild(p);
